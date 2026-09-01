@@ -82,8 +82,7 @@ export const stripeWebhooks = async (req, res) => {
             await courseData.save();
             userData.enrolledCourses.push(courseData._id);
             await userData.save();
-            purchaseData.status = "completed";
-            await purchaseData.save();
+            await purchaseData.findByIdAndUpdate(purchaseId,{status:"completed"});
             break;
         }
         case "payment_intent.payment_failed": {
@@ -94,8 +93,7 @@ export const stripeWebhooks = async (req, res) => {
             });
             const { purchaseId } = session.data[0].metadata;
             const purchaseData = await purchaseModel.findById(purchaseId);
-            purchaseData.status = "failed";
-            await purchaseData.save();
+            await purchaseData.findByIdAndUpdate(purchaseId,{status:"failed"});
             break;
         }
         // ... handle other event types
