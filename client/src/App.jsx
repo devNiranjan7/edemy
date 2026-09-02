@@ -12,6 +12,7 @@ import MyCourses from "./pages/educator/MyCourses.jsx";
 import StudentsEnrolled from "./pages/educator/StudentsEnrolled.jsx";
 import Navbar from "./components/student/Navbar.jsx";
 import Footer from "./components/student/Footer.jsx";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
     const isEducatorRoute = useMatch("/educator/*");
@@ -37,6 +38,7 @@ const App = () => {
                 </Route>
             </Routes>
             {!isEducatorRoute && <Footer />}
+            <ToastContainer />
         </div>
     );
 };
