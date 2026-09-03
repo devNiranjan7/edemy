@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context/AppContext.jsx";
-import { assets, dummyDashboardData } from "../../assets/assets.js";
+import { assets } from "../../assets/assets.js";
 import Loading from "../../components/student/Loading.jsx";
 import { toast } from "react-toastify";
 import axios from "axios";

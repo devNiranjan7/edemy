@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { dummyStudentEnrolled } from "../../assets/assets.js";
 import Loading from "../../components/student/Loading.jsx";
 import { AppContext } from "../../context/AppContext.jsx";
 import axios from "axios";
